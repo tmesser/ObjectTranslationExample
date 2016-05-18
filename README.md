@@ -1,1 +1,1 @@
-# ObjectTranslationExample
+This is a repository showing off how to make an efficient object translation solution using C#.
