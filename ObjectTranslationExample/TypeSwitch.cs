@@ -15,8 +15,7 @@ namespace ObjectTranslationExample
         public static void Do(Type firstSource, Type secondSource, params DualCaseInfo[] cases)
         {
             foreach (var entry in cases.Where(entry =>
-                (entry.IsDefault || entry.FirstTarget.IsAssignableFrom(firstSource)) &&
-                (entry.IsDefault || entry.SecondTarget.IsAssignableFrom(secondSource))))
+                (entry.IsDefault || (entry.FirstTarget == firstSource && entry.SecondTarget == secondSource ))))
             {
                 entry.Action(firstSource, secondSource);
                 break;
